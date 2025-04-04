@@ -1,0 +1,4 @@
+jenkins_home: /var/lib/jenkins
+jenkins_user: jenkins
+jenkins_port: 8080
+ssh_key_path: "/home/{{ ansible_user }}/.ssh/jenkins-key.pem"

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ivolve-app
+  namespace: ivolve
+spec:
+  replicas: 3  # Creates 3 instances of the app (spread across nodes)
+  selector:
+    matchLabels:
+      app: ivolve-app
+  template:
+    metadata:
+      labels:
+        app: ivolve-app
+    spec:
+      containers:
+        - name: ivolve-app
+          image: amrawad12/my-springboot-app:jenkins_38
+          ports:
+            - containerPort: 8081  # Must match Spring Boot app port

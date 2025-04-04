@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ivolve-service
+  namespace: ivolve
+spec:
+  selector:
+    app: ivolve-app
+  ports:
+    - protocol: TCP
+      port: 8081       # Exposes the service inside the cluster
+      targetPort: 8081  # Forwards traffic to the app’s actual port (8081)
+  type: ClusterIP  # Allows access from outside the cluster

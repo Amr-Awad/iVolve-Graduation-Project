@@ -1,0 +1,38 @@
+- name: Download Jenkins Key
+  get_url:
+    url: https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+    dest: /usr/share/keyrings/jenkins-keyring.asc
+    
+- name: Add Jenkins Repository
+  apt_repository:
+    repo: "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/"
+    state: present
+    filename: jenkins.list
+
+- name: Install Jenkins
+  apt:
+    name: jenkins
+    state: present
+    update_cache: yes
+
+- name: Start and Enable Jenkins
+  systemd:
+    name: jenkins
+    enabled: yes
+    state: started
+
+- name: Ensure Jenkins Home Directory Exists
+  file:
+    path: "{{ jenkins_home }}"
+    state: directory
+    owner: "{{ jenkins_user }}"
+    group: "{{ jenkins_user }}"
+    mode: '0755'
+
+- name: Copy SSH Private Key for Jenkins Master
+  copy:
+    src: ~/jenkins-key.pem
+    dest: "{{ ssh_key_path }}"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'

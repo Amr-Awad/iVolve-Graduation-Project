@@ -1,0 +1,16 @@
+- name: Install Docker
+  apt:
+    name: docker.io
+    state: present
+
+- name: Add User to Docker Group
+  user:
+    name: "{{ ansible_user }}"
+    groups: docker
+    append: yes
+
+- name: Enable Docker Service
+  systemd:
+    name: docker
+    enabled: yes
+    state: started

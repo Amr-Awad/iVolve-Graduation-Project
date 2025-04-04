@@ -1,0 +1,20 @@
+- name: Install Java (Required for Slave)
+  apt:
+    name: openjdk-17-jdk
+    state: present
+
+- name: Create Jenkins Agent Directory
+  file:
+    path: "{{ jenkins_agent_workdir }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0755'
+
+- name: Copy SSH Private Key for Jenkins Slave
+  copy:
+    src: ~/jenkins-key.pem
+    dest: "{{ ssh_key_path }}"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'

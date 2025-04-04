@@ -1,0 +1,13 @@
+# Ignore Gradle build output
+/build
+/.gradle
+
+# Ignore IDE/editor specific files
+/.idea
+*.iml
+*.log
+
+# Ignore OS-specific and temporary files
+*.swp
+*.swo
+.DS_Store

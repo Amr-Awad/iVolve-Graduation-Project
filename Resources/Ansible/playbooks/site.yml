@@ -1,0 +1,23 @@
+- name: Configure Jenkins Master
+  hosts: _master
+  become: true
+  roles:
+    - git
+    - java
+    - docker
+    - jenkins_master
+
+- name: Configure Jenkins Slave
+  hosts: _slave
+  become: true
+  roles:
+    - git
+    - java
+    - docker
+    - jenkins_slave
+
+- name: Install SonarQube
+  hosts: _master
+  become: true
+  roles:
+    - sonarqube

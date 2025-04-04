@@ -1,0 +1,5 @@
+[master]
+34.207.245.249 ansible_user=ubuntu ansible_ssh_private_key_file=~/jenkins-key.pem
+
+[slave]
+34.235.138.154 ansible_user=ubuntu ansible_ssh_private_key_file=~/jenkins-key.pem

@@ -1,0 +1,2 @@
+jenkins_agent_workdir: "/home/{{ ansible_user }}/jenkins_agent"
+ssh_key_path: "/home/{{ ansible_user }}/.ssh/jenkins-key.pem"

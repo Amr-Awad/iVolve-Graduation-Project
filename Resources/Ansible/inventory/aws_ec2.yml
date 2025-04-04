@@ -1,0 +1,17 @@
+plugin: amazon.aws.aws_ec2
+regions:
+  - us-east-1
+filters:
+  tag:Name:
+    - master
+    - slave
+hostnames:
+  - ip-address  # This dynamically fetches the actual public IPs
+keyed_groups:
+  - key: tags.Name
+compose:
+  ansible_host: ip_address  # Ensures Ansible connects via public IP
+  ansible_user: "'ubuntu'"
+  ansible_ssh_private_key_file: "'/home/osboxes/jenkins-key.pem'"
+  ansible_ssh_common_args: '-o StrictHostKeyChecking=no'  
+  
