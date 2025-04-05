@@ -22,7 +22,7 @@ The iVolve Graduation Project is a comprehensive DevOps pipeline designed to aut
   - Multi-stage Dockerfile for efficient image creation.
   - Runs the application in a lightweight container.
 - **Integration**: Provides a portable runtime environment for the application.
-- **Details**: [Docker Documentation](./Resources/Docker/readme.md)
+- **Details**: [Docker Documentation](./Docker/readme.md)
 
 ---
 
@@ -32,7 +32,7 @@ The iVolve Graduation Project is a comprehensive DevOps pipeline designed to aut
   - Creates a Virtual Private Cloud (VPC), EC2 instances, security groups, and an S3 bucket for Terraform state.
   - Modular structure for scalability and reusability.
 - **Integration**: Provides the foundational infrastructure for the entire pipeline.
-- **Details**: [Terraform Documentation](./Resources/Terraform/readme.md)
+- **Details**: [Terraform Documentation](./Terraform/readme.md)
 
 ---
 
@@ -123,12 +123,12 @@ The iVolve Graduation Project is a comprehensive DevOps pipeline designed to aut
 
 ## **Links to Tool-Specific Documentation**
 
-- [Terraform Documentation](./Resources/Terraform/readme.md)
-- [Jenkins Documentation](./Resources/Jenkins/readme.md)
+- [Terraform Documentation](./Terraform/readme.md)
+- [Jenkins Documentation](./Jenkins/readme.md)
 - [Kubernetes Documentation](./Kubernetes/readme.md)
-- [Ansible Documentation](./Resources/Ansible/readme.md)
-- [Docker Documentation](./Resources/Docker/readme.md)
-- [ArgoCD Documentation](./Resources/ArgoCD/readme.md)
+- [Ansible Documentation](./Ansible/readme.md)
+- [Docker Documentation](./Docker/readme.md)
+- [ArgoCD Documentation](./ArgoCD/readme.md)
 
 ---
 
